@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 1px solid #999;
+    padding: 0 0 15px 0;
+}
+
+.input-container {
+    text-align: center;
+    padding: 20px 0 0 0;
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+    margin: 0 0 20px 0;
+}
+
+.input-field,
+button {
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    border-radius: 5px;
+    border: none;
+    background: #eee;
+    outline: none;
+    width: 60%;
+    box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.3);
+    font-family: inherit;
+    letter-spacing: 0.8px;
+}
+
+.input-field:focus:invalid {
+    border-bottom: 2px solid red;
+}
+
+.input-field:valid {
+    border-bottom: 2px solid green;
+}
+
+button {
+    font-size: 1rem;
+    background: blueviolet;
+    color: #fff;
+    width: 30%;
+    cursor: pointer;
+    box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+}
+
+.green {
+    margin-right: 5px;
+}
+
+.container {
+    box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 15px 15px;
+    grid-auto-flow: dense;
+}
+
+.header {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+}
+
+.header:first-of-type {
+    grid-column: 1 / span 2;
+}
+
+i {
+    cursor: pointer;
+    color: #444;
+}
+
+i.fa-trash {
+    margin-left: 7px;
+}
+
+i.fa-check:hover {
+    color: green;
+}
+
+i.fa-trash:hover,
+i.fa-times:hover {
+    color: red;
+}
+
+.todo {
+    grid-column: 1 / span 1;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border-bottom: 3px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+    animation: todo 0.3s ease;
+}
+
+.todo:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: red;
+}
+
+.todo:hover.completed {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: green;
+}
+
+.todo.completed {
+    grid-column: 2 / span 1;
+    border-color: green;
+}
+
+.todo-id {
+    display: none;
+}
+
+.todo-actions {
+    display: flex;
+    padding: 0 0 0 7px;
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding: 10px 10px;
+    }
+
+    .input-field,
+    button {
+        width: 90%;
+    }
+}
+
+@media (max-width: 370px) {
+    body {
+        padding: 0 5px;
+    }
+
+    .todo {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .todo-actions {
+        margin-top: 10px;
+    }
+}
+
+@keyframes todo {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
